@@ -1,3 +1,5 @@
+package pages;
+
 import com.ws.driver.DriverScript;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

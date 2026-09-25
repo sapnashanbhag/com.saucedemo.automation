@@ -1,3 +1,5 @@
+package com.ws.driver;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -9,7 +11,7 @@ import java.io.FileInputStream;
 import java.time.Duration;
 import java.util.Properties;
 
-@Test
+
 public class DriverScript {
         public static WebDriver driver;
         Properties prop;
