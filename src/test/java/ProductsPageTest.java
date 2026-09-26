@@ -58,30 +58,42 @@ public class ProductsPageTest extends BaseTest {
         Assert.assertEquals(actualList, expectedlist, "Actual and Expected List does not match");
         logger.pass("validated sort by price High to Low");
     }
-   /* @Test(priority=5)
-    public void clickallproducts(){
-        System.out.println(productsPage.productItemNames.size());
-
-        for(int i=0;i<productsPage.productItemNames.size();i++)
-        {
-            productsPage.productItemNames =
-                    driver.findElements(By.xpath("//div[@class='inventory_item_name ']"));
-
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-            wait.until(ExpectedConditions.elementToBeClickable((productsPage.productItemNames.get(i))));
-            productsPage.productItemNames.get(i).click();
-            String expectedproductname = driver.findElement(By.xpath("//div[@class='inventory_details_name large_size']")).getText();
-            System.out.println(driver.findElement(By.xpath("//div[@class='inventory_details_name large_size']")).getText());
-
-            WebElement actualproductname = wait.until(ExpectedConditions.elementToBeClickable(productsPage.productItemNames.get(i)));
-            Assert.assertEquals(actualproductname.getText(),expectedproductname,"Actual and Expected product do not match");
-            driver.navigate().back();
-        }
-    }
-    */
     @Test(priority = 4)
     public void clickaproduct(){
         productsPage.clickProduct("Sauce Labs Bike Light");
+    }
+    @Test(priority=5)
+    public void clickleftnavigationmenu(){
+        productsPage.openmenubuttonclick();
+        boolean flag = productsPage.isclosemenubuttondisplayed();
+        Assert.assertTrue(flag,"CloseMenu Button is not displayed");
+    }
+    @Test(priority=6)
+    public void clickallitemssidebarlink(){
+        productsPage.openmenubuttonclick();
+        productsPage.allitemssidebarlinkclick();
+        boolean flag = productsPage.isproductsheaderdisplayed();
+        Assert.assertTrue(flag,"Products header is not displayed");
+    }
+    @Test(priority=7)
+    public void aboutsidebarlinkclick() throws InterruptedException{
+        productsPage.openmenubuttonclick();
+        Thread.sleep(3000);
+
+        productsPage.clickaboutlink();
+        Thread.sleep(3000);
+        String expectedurl = "https://saucelabs.com/";
+        String actualurl = driver.getCurrentUrl();
+        Assert.assertEquals(actualurl,expectedurl,"Actual url and expected url do not match");
+        driver.navigate().back();
+        Assert.assertTrue(productsPage.isproductsheaderdisplayed(),"Back Navigation is not working");
+    }
+
+    @Test(priority=8)
+    public void testlogoutlinkclick(){
+        productsPage.openmenubuttonclick();
+        productsPage.clicklogoutlink();
+        String actualurl = driver.getCurrentUrl();
+        Assert.assertTrue(actualurl.contains("https://www.saucedemo.com/"),"actual and expected url do not match");
     }
 }

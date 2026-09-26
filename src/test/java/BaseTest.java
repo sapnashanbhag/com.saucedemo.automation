@@ -23,7 +23,7 @@ public class BaseTest extends DriverScript {
 
     @BeforeSuite
     public void SetupReport(){
-        ExtentHtmlReporter extent = new ExtentHtmlReporter("" + "F:/SeleniumTraining/seleniumworkspace/com.automation.webshop/src/test/resources/testreports/autoreport.html");
+        ExtentHtmlReporter extent = new ExtentHtmlReporter("" + "F:/SeleniumTraining/seleniumworkspace/com.saucedemo.automation/src/test/resources/testreports/autoreport.html");
         report = new ExtentReports();
         report.attachReporter(extent);
     }
