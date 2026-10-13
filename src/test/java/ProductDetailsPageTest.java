@@ -12,6 +12,8 @@ public class ProductDetailsPageTest extends BaseTest {
         loginPage.clickLoginButton();
     }*/
     //This is a test case to validate the product details page functionality
+    //Testing for conflict related changes
+    //New entry in file.
     @Test(priority=1)
     public void testClickaProduct(){
         logger = report.createTest("Test Click a Product");
