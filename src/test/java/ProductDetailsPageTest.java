@@ -11,6 +11,7 @@ public class ProductDetailsPageTest extends BaseTest {
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLoginButton();
     }*/
+    //trial
     //This is a test case to validate the product details page functionality
     @Test(priority=1)
     public void testClickaProduct(){
