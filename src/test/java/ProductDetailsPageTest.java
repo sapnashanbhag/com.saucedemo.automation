@@ -12,7 +12,6 @@ public class ProductDetailsPageTest extends BaseTest {
         loginPage.clickLoginButton();
     }*/
    
-    //This comment is used to try to change in main branch and see if it is reflected in dilip branch. how to do it.
     @Test(priority=1)
     public void testClickaProduct(){
         logger = report.createTest("Test Click a Product");
