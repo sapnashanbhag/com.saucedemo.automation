@@ -11,6 +11,8 @@ public class ProductDetailsPageTest extends BaseTest {
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLoginButton();
     }*/
+    //Testing for conflict related changes
+    //New entry in file.
     @Test(priority=1)
     public void testClickaProduct(){
         logger = report.createTest("Test Click a Product");
