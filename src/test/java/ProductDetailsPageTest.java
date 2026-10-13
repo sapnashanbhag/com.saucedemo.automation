@@ -11,8 +11,8 @@ public class ProductDetailsPageTest extends BaseTest {
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLoginButton();
     }*/
-    //trial
-    //This is a test case to validate the product details page functionality
+
+    //This comment is used to try to change in main branch and see if it is reflected in dilip branch. how to do it.
     @Test(priority=1)
     public void testClickaProduct(){
         logger = report.createTest("Test Click a Product");
